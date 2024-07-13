@@ -17,6 +17,19 @@
         extend: {
           colors: {
             clifford: '#da373d',
+            primary: {
+          DEFAULT: '#3B82F6',
+          50: '#f5f3ff',
+          100: '#e0e7ff',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95'
+        },
           }
         }
       }
@@ -28,17 +41,17 @@
     
 <body>
   <main >
-    <div class="">
+    <div >
       <header class="absolute inset-x-0 top-0 z-50">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Fam🤍Vents</span>
-              <img class="h-8 w-auto" src="https://bcassetcdn.com/social/sw3ztaa844/preview.png" alt="logo">
+            <span class="h-8 w-auto font-bold text-blue-950"> Fam🤍Vents</span> 
             </a>
           </div>
           <div class="flex lg:hidden">
-            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onclick="toggleMenu()">
               <span class="sr-only">Open main menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -56,46 +69,26 @@
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <!-- <div class="lg:hidden" role="dialog" aria-modal="true"> -->
-               <!-- Background backdrop, show/hide based on slide-over state. -->
-          <!-- <div class="fixed inset-0 z-50"></div> -->
-          <!-- <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Fam🤍Vents</span>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-              </a>
-              <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-                  <a href="#aboutUs" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About Us</a>
-                  <a href="#contactUs" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact Us</a>
-                  <a href="#services" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
-                </div>
-                <div class="py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
+        <div id="mobileMenu" class="lg:hidden hidden bg-white">
+          <div class="px-6 pt-2 pb-6">
+            <a href="#" class="block py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+            <a href="#aboutUs" class="block py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About Us</a>
+            <a href="#contactUs" class="block py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact Us</a>
+            <a href="#services" class="block py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+            <a href="#" class="block py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+          </div>
+           
+           
+        </header>
         </div>
-      </header>
     
 <!-- hero -->
 <br>
 <br>  <br>
 
-<div class="relative isolate px-6 pt-14 lg:px-8  justify-between">
-  <div class="hero min-h-screen ">
-    <div class="hero-content flex-col lg:flex-row justify-between ">
+<div class="relative  isolate px-6 pt-14 lg:px-8  justify-between">
+  <div class="hero  ">
+    <div class="hero-content  flex-col lg:flex-row justify-between ">
       
       <div  >
               <h1 class=" font-bold text-2xl ">Welcome To Fam🤍Vents</h1>
@@ -133,397 +126,355 @@
                 </div>
               </div>
             </div>
-    
-      <!-- about us -->
-      <br><br>
-      <br>
-      <br>
-      <div class="bg-gray-100 container mx-auto">
-      <h1 class="card-title font-bold items-center text-4xl m-3 p-3 justify-center">About Us</h1>
-
-    <div id="aboutUs" class="flex flex-wrap gap-4  p-4 pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark"  >
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <a href="#">
-    <figure class="w-96">
-      <img
-      src="https://plus.unsplash.com/premium_photo-1664304095595-e428558e8161?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="vents1" />
-    </figure>
-  </a>
-  <div class="p-5">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Who forgets The Holi..!</h5>
-      </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Just The best festival ever created in thehuman history.
-            All of us keep waiting for this festival every year..,
-          It's not only a colourful Festival 
-          but also the colour of life and happiness.</p>
-      <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Read more
-           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-      </a>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
-      </div>
-  </div>
-</div>
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <a href="#">
-    <figure class="w-96">
-      <img
-src="https://plus.unsplash.com/premium_photo-1681910558593-0fadd9474031?q=80&w=2038&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="vents2" />
-    </figure>
-    
-  </a>
-  <div class="p-5">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Let's pin the dates...This Time!</h5>
-      </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Oh yeah I know The situation that you brought yourself
-        into that time when you forgot your little sis's birthday.
-       I am pretty sure You won't like it to happen again..!
-     So here's the solution....!</p>
-      <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Read more
-           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-      </a>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
-      </div>
-  </div>
-</div>
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <a href="#">
-    <figure class="w-96">
-      <img
-        src="https://plus.unsplash.com/premium_photo-1661369914624-e96d50b82869?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdGhlcnMlMjBkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
-        alt="vents3" />
-    </figure>
-  </a>
-  <div class="p-5">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">This time <span>Mother's day </span>is On 25th,2024</h5>
-      </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Let's buy her favourite ring this time in <strong>advance.</strong> 
-            Because she is not gonna forget everytime.</p>
-      <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Read more
-           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-      </a>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
-      </div>
-  </div>
-</div>
-
-    
-    
-      
+  
+  <!-- aboutus card -->
+<!-- component -->
+<div id="aboutUs" class="mt-8 relative isolate mb-8">
+<div class="text-4xl font-bold m-2 text-center">About Us</div>
+<div class="gallery border-1 rounded mx-auto m-5 bg-slate-100" style=" width: 750px; @media screen and (max-width: 480px) and (min-width: 120px) {
+  #aboutUs{
+    width: 30%; 
+    margin-right: auto;
+    margin-left: 8px;
+  }
+       }">
+  <div class="top flex p-2 border-b select-none">
+    <div class="heading text-gray-800 w-full pl-3 font-semibold my-auto"></div>
+    <div class="buttons ml-auto flex text-gray-600 mr-1">
+      <svg action="prev" class="w-7 border-2 rounded-l-lg p-1 cursor-pointer border-r-0"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path action="prev" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      <svg action="next" class="w-7 border-2 rounded-r-lg p-1 cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path action="next" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
     </div>
   </div>
-  
-  
-  <!-- ====== Services Section Start -->
-  <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
-  <h1 id="services" class="card-title font-bold items-center text-4xl m-3 p-3 justify-center">Our Services.</h1>
-  <div class="container mx-auto">
-     <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4">
-           <div class="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
-              <h2
-                 class="text-dark dark:text-white mb-3 text-3xl leading-[1.2] font-bold sm:text-4xl md:text-[40px]"
-                 >
-                 What We Offer
-              </h2>
-           </div>
+  <div class="content-area w-full h-96 overflow-hidden">
+    <div class="platform shadow-xl h-full flex">
+      <!-- frame start -->
+      <div class="each-frame border-box flex-none h-full" title="The Holi..!">
+        <!-- title shows in top -->
+        <!-- this is full editable area -->
+        <div class="main flex flex-col md:flex-row w-full p-8">
+          <div class="sub w-full md:w-4/6 my-auto">
+            <img class="w-full p-8"
+            src="https://plus.unsplash.com/premium_photo-1664304095595-e428558e8161?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             alt="vent1">
+          </div>
+          <div class="sub w-full my-auto">
+            <div class="head text-3xl font-bold mb-4">Who forgets The Holi..!</div>
+            <div class="long-text text-lg">Just The best festival ever created in the human history.
+              All of us keep waiting for this festival every year..,
+            It's not only a colourful Festival 
+            but also the colour of life and happiness.</div>
+            <!-- this buttons are usable everywhere inside gallery element -->
+            <!-- <div
+              class="goto border border-gray-400 text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer"
+              action="goto" goto="2">Goto Third Frame</div> -->
+            <!-- add (action="goto" goto="[val]{0 means first frame and so on}") attribute to jump into frames -->
+            <div
+              class="goto  text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer"
+              action="goto" goto="end">
+              <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
+            </div>
+          </div>
         </div>
-     </div>
-     <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-           <div
-              class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-              >
-              <div
-                 class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-                 >
-                 <figure>
-                  <img 
-                    src="https://images.unsplash.com/photo-1610313898425-a5c637a940db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9saXxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Movie" />
-                </figure>
-              </div>
-              <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-                Add As Many Fam🤍Vents U Want.
-              </h4>
-              <p class="text-body-color dark:text-dark-6">
-                 You Can ADD All Your Imoportant Dates Here.
-            Keep a record of all Your family Events in one place.
-            So You should not have to 
-            wander to places and to people to  remember the birthdays
-            or anniversaries or Your GetTogethers.
-              </p>
-              <a href="#aboutUs" class="btn btn-primary" >Learn More</a>
+      </div>
+      <!-- frame end -->
 
-           </div>
-        </div>
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-           <div
-              class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-              >
+      <div class="each-frame border-box flex-none h-full" title="Mothers Day">
+        <!-- title shows in top -->
+        <!-- this is full editable area -->
+        <div class="main flex flex-col md:flex-row w-full p-8">
+          <div class="sub w-full md:w-4/6 my-auto">
+            <img class="w-full p-8" 
+            src="https://plus.unsplash.com/premium_photo-1661369914624-e96d50b82869?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdGhlcnMlMjBkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+       alt="vent2">
+          </div>
+          <div class="sub w-full my-auto">
+            <div class="head text-3xl font-bold mb-4">This time <span>Mother's day </span>is On 25th,2024</div>
+            <div class="long-text text-lg">Let's buy her favourite ring this time in <strong>advance.</strong> 
+              Because she is not gonna forget everytime.</div>
               <div
-                 class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-                 >
-                 <figure>
-                  <img 
-                    src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnRzfGVufDB8fDB8fHww"
-                    alt="Movie" />
-                </figure>
-              </div>
-              <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-                See All The Fam🤍Vents
-              </h4>
-              <p class="text-body-color dark:text-dark-6">
-                You can access the Dates Saved by even any 
-            of your family members,
-            So even if you forgot to pin the Dates 
-            Nothing to worry <strong>Just Login </strong>
-            And You're saved.
-              </p>
-              <a class="btn btn-primary" href="#aboutUs" >Learn More</a>
+              class="goto text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer"
+              action="goto" goto="end">
+              <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- frame end -->
 
-           </div>
-        </div>
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+      <div class="each-frame border-box flex-none h-full" title="Sis's birthday">
+        <!-- title shows in top -->
+        <!-- this is full editable area -->
+        <div class="main flex flex-col md:flex-row w-full p-8">
+          <div class="sub w-full md:w-4/6 my-auto">
+            <img class="w-full p-8"
+            src="https://plus.unsplash.com/premium_photo-1681910558593-0fadd9474031?q=80&w=2038&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="vent3">
+          </div>
+          <div class="sub w-full my-auto">
+            <div class="head text-3xl font-bold mb-4">Let's pin the dates...This Time!</div>
+            <div class="long-text text-lg">Oh yeah I know The situation that you brought yourself
+              into that time when you forgot your little sis's birthday.
+             I am pretty sure You won't like it to happen again..!
+           So here's the solution....!</div>
            <div
-              class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-              >
-              <div
-                 class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-                 >
-                 <figure>
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1661369914624-e96d50b82869?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdGhlcnMlMjBkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Movie" />
-                </figure>
-                
-              </div>
-              <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-                LogIn IF U Forget!
-              </h4>
-              <p class="text-body-color dark:text-dark-6">
-                All You need is The Surname Of Your Family
+              class="goto text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer"
+              action="goto" goto="end">
+              <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- frame end -->
+
+      <div class="each-frame border-box flex-none h-full " title="Family Dinner">
+        <!-- title shows in top -->
+        <!-- this is full editable area -->
+        <div class="main flex flex-col md:flex-row w-full p-8 ">
+          <div class="sub w-full md:w-4/6 my-auto">
+            <img class="w-full p-8"
+            src="https://images.unsplash.com/photo-1675159206783-b2f129e46ef0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="vent4">
+          </div>
+          <div class="sub w-full my-auto">
+            <div class="head text-3xl font-bold mb-4">Don't Forget About The Family Dinner</div>
+            <div class="long-text text-lg">
+             You can access the Dates Saved by even any 
+              of your family members,
+              So even if you forgot to pin the Dates 
+              Nothing to worry <strong>Just Login </strong>
+              And You're saved.
+            </div>
+            <div
+              class="goto text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer"
+              action="goto" goto="0">            
+                <button class="btn btn-primary" onclick="scrollToToggleBtn()" ><i class="fa-solid fa-map-pin"></i>Dates</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- frame end -->
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ====== Services Section Start -->
+  <section id="services" class="pt-20 pb-12 lg:pt-[70px] lg:pb-[40px] dark:bg-dark">
+    
+    <!-- services 2  -->
+    <div class="bg-gray-200 px-2 py-10">
+   <h1  
+    class="flex font-bold items-center text-4xl m-3 p-3 justify-center">Our Services</h1></p>
+  <div id="features" class="mx-auto max-w-6xl">
+    <h2 class="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      </h2>
+    <ul class="mt-16 grid grid-cols-1 gap-6 text-center text-slate-700 md:grid-cols-3">
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <div class="group">
+                    <img
+        src="https://images.unsplash.com/photo-1610313898425-a5c637a940db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9saXxlbnwwfHwwfHx8MA%3D%3D"
+      alt="serv1" class="mx-auto h-10 w-10">
+        <h3 class="my-3 font-display font-medium"> Add As Many <a href="#aboutUs" style="color: blue;">🤍</a>  U Want.
+        </h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+          You Can ADD All Your Imoportant Dates Here.
+          Keep a record of all Your family Events in one place.
+          So You should not have to 
+          wander to places and to people to  remember the birthdays
+          or anniversaries or Your GetTogethers.
+                </p>
+      </div>
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+          <div  class="group">
+          <img 
+        src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnRzfGVufDB8fDB8fHww"
+        alt="serv2" class="mx-auto h-10 w-10"> 
+        <h3 class="my-3 font-display font-medium"> See All The <a href="#aboutUs" style="color: blue;">Vents</a></h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">You can access the Dates Saved by even any 
+          of your family members,
+          So even if you forgot to pin the Dates 
+          Nothing to worry <strong>Just Login </strong>
+          And You're saved.
+          </p>
+      </div>
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <div  class="group">
+          <img 
+          src="https://plus.unsplash.com/premium_photo-1683121078865-29f29c60bb86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+     alt="serv3" class="mx-auto h-10 w-10">
+        <h3 class="my-3 font-display font-medium"> Alarm will Ring</h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+          If there's still Something All of You Forget 
+          Then Not to Worry..., Our Alarm is here
+         to ping you and save you from humiliation from your family.
+        </p>
+      </div>
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <div class="group">
+          <img 
+          src="https://plus.unsplash.com/premium_photo-1661369914624-e96d50b82869?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdGhlcnMlMjBkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+
+          alt="serv4" class="mx-auto h-10 w-10">
+          <h3 class="my-3 font-display font-medium "> LogIn IF U Forget!
+          </h3>
+          <p class="mt-1.5 text-sm leading-6 text-secondary-500">All You need is The Surname Of Your Family
             And Permission from the admin..! 
  And Tada....  You can access All the 
-<strong>Fam🤍Vents.</strong> By Login.
-              </p>
-              <a class="btn btn-primary" href="#aboutUs">Learn More</a>
-
-           </div>
+<a href="#aboutUs" style="color: blue;">🤍s</a> By Login.</p>
         </div>
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-           <div
-              class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-              >
-              <div
-                 class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-                 >
-                 <figure>
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1683121078865-29f29c60bb86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Movie" />
-                </figure>
-                
-              </div>
-              <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-                Alarm will Ring
-              </h4>
-              <p class="text-body-color dark:text-dark-6">
-                If there's still Something All of You Forget 
-              Then Not to Worry..., Our Alarm is here
-             to ping you and save you from humiliation from your family.
-              </p>
-              <div class="card-actions justify-end">
-                <a class="btn btn-primary" href="#aboutUs" >Learn More</a>
-              </div>
-           </div>
-        </div>
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-          <div
-             class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-             >
-             <div
-                class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-                >
-                <figure>
-                 <img 
-                   src="https://images.unsplash.com/photo-1610313898425-a5c637a940db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9saXxlbnwwfHwwfHx8MA%3D%3D"
-                   alt="Movie" />
-               </figure>
-             </div>
-             <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-               Add As Many Fam🤍Vents U Want.
-             </h4>
-             <p class="text-body-color dark:text-dark-6">
-                You Can ADD All Your Imoportant Dates Here.
-            Keep a record of all Your family Events in one place.
-           So You should not have to 
-           wander to places and to people to  remember the birthdays
-           or anniversaries or Your GetTogethers.
-             </p>
-             <a class="btn btn-primary" href="#aboutUs">Learn More</a>
-
-          </div>
-       </div>
-       <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-        <div
-           class="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
-           >
-           <div
-              class="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
-              >
-              <figure>
-               <img
-                 src="https://plus.unsplash.com/premium_photo-1683121078865-29f29c60bb86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
-                 alt="Movie" />
-             </figure>
-             
-           </div>
-           <h4 class="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
-             Alarm will Ring
-           </h4>
-           <p class="text-body-color dark:text-dark-6">
-             If there's still Something All of You Forget 
-           Then Not to Worry..., Our Alarm is here
-          to ping you and save you from humiliation from your family.
-           </p>
-           <div class="card-actions justify-end">
-             <a class="btn btn-primary" href="#aboutUs" >Learn More</a>
-           </div>
-        </div>
-     </div>
-
-
-
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <div  class="group">
+        <img 
+      src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnRzfGVufDB8fDB8fHww"
+      alt="serv2" class="mx-auto h-10 w-10"> 
+      <h3 class="my-3 font-display font-medium">Keeping All <a href="#aboutUs" style="color: blue;">Vents</a> Together </h3>
+      <p class="mt-1.5 text-sm leading-6 text-secondary-500">Keeping all the important dates in one place,
+        that saves you from missing out <strong>on special days </strong>
+        of your special ones.
+        </p>
     </div>
-    <div class="flex justify-center items-center" id="toggleForm" >
-        <button class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-700 transition " onclick="openModal('modelConfirm')">
-         Enter Fam🤍Vents
-       </button>
-       
-       <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
-           <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-       
-               <div class="flex justify-end p-2">
-                   <button onclick="closeModal('modelConfirm')" type="button"
-                       class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd"
-                               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                               clip-rule="evenodd"></path>
-                       </svg>
-                   </button>
-               </div>
-       
-               <div class="p-6 pt-0 text-center">
-                
-                <h3 class="text-xl font-bold text-blue-600 mt-5 mb-6">Add The <br>Fam🤍Vents here...!</h3>
-    
-                   <form class="w-96ps justify-center">
-                     <div class="flex flex-wrap -mx-3 mb-6">
-                       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                         <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-name">
-                           Event Name
-                         </label>
-                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-event-name" type="text" placeholder="Jane">
-                         <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-                       </div>
-                       <div class="w-full md:w-1/2 px-3">
-                         <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-date">
-                           Event Date
-                         </label>
-                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                           id="grid-event-date" type="date" placeholder="Doe">
-                       </div>
-                     </div>
-                     <div class="flex flex-wrap -mx-3 mb-6">
-                       <div class="w-full px-3">
-                         <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-time">
-                           Event Time
-                         </label>
-                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                         id="grid-event-time" type="time" placeholder="********@*****.**">
-                       </div>
-                     </div>
-                       
-                       <div class="flex flex-wrap -mx-3 mb-6">
-                       <div class="w-full px-3">
-                         <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-message">
-                           Your Message
-                         </label>
-                         <textarea rows="10" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-message">
-                           
-                         </textarea>
-                       </div>
-                       <div class="flex justify-between w-full px-3">
-                        
-                         <button class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" onclick="" id="btn" type="submit">
-                           Submit
-                         </button>
-                       </div>
-                         
-                     </div>
-                       
-                   </form>
-                   <!-- <a href="#toggleForm"  onclick="closeModal('modelConfirm')"
-                  class="text-white bg-blue-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
-                  Want To Add.
-                 </a>  -->
-                   <a href="#" onclick="closeModal('modelConfirm')"
-                       class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
-                       data-modal-toggle="delete-user-modal">
-                       No, cancel
-                   </a>
-               </div>
-       
-           </div>
-       </div>
-       
-    
-    
-    <!-- ------ -->
-        <div id="ventForm" class="carousel-item w-full justify-center" style="display: none;" >
-        </div>
-        
-      </div>
+    </li>
+    <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+      <a href="#aboutUs" class="group">
+        <img 
+        src="https://plus.unsplash.com/premium_photo-1683121078865-29f29c60bb86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmlydGhkYXklMjBjZWxlYnJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+   alt="serv3" class="mx-auto h-10 w-10">
+      <h3 class="my-3 font-display font-medium">Help your members remember...</h3>
+      <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+       Maybe your cousins need this events more than you...
+       cause you don't forget easily, but they don't remember generally...
+      </p>
+    </a>
+    </li>
+    </ul>
   </div>
-</section>
-<!-- ====== Services Section End -->
 
+  <div>
+  
+  
+  </section>
+  <!-- ====== Services Section End -->
   <!-- famvents toggle -->
- 
+  
+  <div class="flex justify-center items-center" id="toggleForm" >
+      <button class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-700 transition " onclick="openModal('modelConfirm')">
+       Enter Fam🤍Vents
+     </button>
+     
+     <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+         <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+     
+             <div class="flex justify-end p-2">
+                 <button onclick="closeModal('modelConfirm')" type="button"
+                     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                         <path fill-rule="evenodd"
+                             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                             clip-rule="evenodd"></path>
+                     </svg>
+                 </button>
+             </div>
+     
+             <div class="p-6 pt-0 text-center">
+              
+              <h3 class="text-xl font-bold text-blue-600 mt-5 mb-6">Add The <br>Fam🤍Vents here...!</h3>
+  
+                 <form class="w-96ps justify-center">
+                   <div class="flex flex-wrap -mx-3 mb-6">
+                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                       <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-name">
+                         Event Name
+                       </label>
+                       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-event-name" type="text" placeholder="Jane">
+                       <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+                     </div>
+                     <div class="w-full md:w-1/2 px-3">
+                       <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-date">
+                         Event Date
+                       </label>
+                       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                         id="grid-event-date" type="date" placeholder="Doe">
+                     </div>
+                   </div>
+                   <div class="flex flex-wrap -mx-3 mb-6">
+                     <div class="w-full px-3">
+                       <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-event-time">
+                         Event Time
+                       </label>
+                       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                       id="grid-event-time" type="time" placeholder="********@*****.**">
+                     </div>
+                   </div>
+                     
+                     <div class="flex flex-wrap -mx-3 mb-6">
+                     <div class="w-full px-3">
+                       <label class="block uppercase tracking-wide text-gray-700 text-md font-bold mb-2" for="grid-message">
+                         Your Message
+                       </label>
+                       <textarea rows="10" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-message">
+                         
+                       </textarea>
+                     </div>
+                     <div class="flex justify-between w-full px-3">
+                      
+                       <button class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" onclick="" id="btn" type="submit">
+                         Submit
+                       </button>
+                     </div>
+                       
+                   </div>
+                     
+                 </form>
+                 <!-- <a href="#toggleForm"  onclick="closeModal('modelConfirm')"
+                class="text-white bg-blue-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
+                Want To Add.
+               </a>  -->
+                 <a href="#" onclick="closeModal('modelConfirm')"
+                     class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
+                     data-modal-toggle="delete-user-modal">
+                     No, cancel
+                 </a>
+             </div>
+     
+         </div>
+     </div>
+     
+  
+  
+  <!-- ------ -->
+      <div id="ventForm" class="carousel-item w-full justify-center" style="display: none;" >
+      </div>
+      
+    </div>
+
 
 
   <!-- contact us -->
   <br>
   <br>
-  <h1 id="contactUs" class="card-title font-bold items-center text-4xl m-3 p-3 justify-center">Contact Us</h1>
 
   
   <div class="max-w-screen-md mx-auto p-5" >
     <div class="text-center mb-16">
-      <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
+      <p class="mt-2 mb-2 text-4xl leading-7 font-bold uppercase">
           Contact
         </p>
-        <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+        <h3 class="text-xl sm:text-xl leading-normal tracking-tight text-gray-900">
           Get In <span class="text-indigo-600">Touch</span>
         </h3>
     </div>
@@ -595,8 +546,8 @@ src="https://plus.unsplash.com/premium_photo-1681910558593-0fadd9474031?q=80&w=2
       <nav class="grid grid-flow-col gap-4 text-md">
         <a class="link link-hover">About us</a>
         <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
+        <a class="link link-hover">services</a>
+        <a class="link link-hover"></a>
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4">
@@ -636,7 +587,7 @@ src="https://plus.unsplash.com/premium_photo-1681910558593-0fadd9474031?q=80&w=2
         </div>
       </nav>
       <aside>
-        <p class="text-md">Copyright © ${new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+        <p class="text-md">Copyright © 2024 - All right reserved by FAM🤍VENTS Ltd</p>
       </aside>
     </footer>
   </main>

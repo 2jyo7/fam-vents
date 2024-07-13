@@ -8,3 +8,9 @@ body {
 }
 
 
+.platform {
+  position: relative;
+  transition: right 0.3s;
+}
+
+
